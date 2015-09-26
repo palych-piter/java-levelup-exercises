@@ -16,9 +16,8 @@ public class StackToOverflow{
 
     //Method to add a new value to overflow
     public void OverflowStack()throws Exception {
-        try{
-            Stack[5] = 666;
-            System.out.println("fff");
+        try{ Stack[4] = 666;
+            //throw new StackOverflowException("Exception while populating an array: Test");
         } catch (StackOverflowException e){
             System.out.println("Exception while populating an array: " + e);
         }
