@@ -19,7 +19,7 @@ public class StackToOverflow{
         try{
             Stack[5] = 666;
             System.out.println("fff");
-        } catch (StackOverflowException /*ArrayIndexOutOfBoundsException*/ e){
+        } catch (StackOverflowException e){
             System.out.println("Exception while populating an array: " + e);
         }
     }
