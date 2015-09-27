@@ -11,15 +11,17 @@ public class StackToOverflow{
 
     public static void main(String[] args) throws Exception{
         StackToOverflow newstack = new StackToOverflow();
-        newstack.OverflowStack();
+        newstack.OverflowStack(5);
     }
 
     //Method to add a new value to overflow
-    public void OverflowStack()throws Exception {
-        try{ Stack[4] = 666;
-            //throw new StackOverflowException("Exception while populating an array: Test");
+    public void OverflowStack(Integer ArrayIndex) throws Exception{
+        try{ if (ArrayIndex > 4){
+                 //"e" variable will contain this message
+                 throw new StackOverflowException("Out of index error.");
+             }
         } catch (StackOverflowException e){
-            System.out.println("Exception while populating an array: " + e);
+            System.out.println("Array error: " + e.getMessage());
         }
     }
 }
