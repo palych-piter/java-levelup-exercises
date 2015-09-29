@@ -1,7 +1,6 @@
 package file_input_output;
 
-import java.io.File;
-import java.io.PrintStream;
+import java.io.*;
 import java.util.Scanner;
 
 /**
@@ -9,20 +8,22 @@ import java.util.Scanner;
  */
 public class StringReWrite{
 
-    //Define an input and output files
-    public static File inputfile = new File ("string.in");
-    public static File outputfile = new File ("string.out");
-
     //Main method
     public static void main(String[] args)throws Exception {
         RewritingString();
     }
 
     public static void RewritingString()throws Exception {
-        try {
-            PrintStream printstream = new PrintStream(outputfile);
-            Scanner scanner = new Scanner(inputfile);
-            String inputstring = scanner.next();
+        try{
+            //define files to handle
+            FileWriter outputfile = new FileWriter ("string.out");
+            FileReader inputfile = new FileReader ("string.in");
+
+            //define new buffers
+            BufferedReader bufferedReader = new BufferedReader(inputfile);
+            BufferedWriter bufferedWriter = new BufferedWriter(outputfile);
+
+            String inputstring = bufferedReader.readLine();
             String outputstring = "";
 
             for (int i=inputstring.length()-1; i>-1; i--){
@@ -30,7 +31,11 @@ public class StringReWrite{
             }
 
             //Write result into the file
-            printstream.println(outputstring);
+            bufferedWriter.write(outputstring);
+            //Close streams
+            bufferedReader.close();
+            bufferedWriter.close();
+
         }
         finally {
             System.out.println("The operation has been completed");
