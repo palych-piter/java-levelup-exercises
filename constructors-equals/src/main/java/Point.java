@@ -28,8 +28,10 @@ public class Point {
     public static void main(String[] args) {
         Point point1 = new Point(10,20);
         Point point2 = new Point(10,20);
-        System.out.println("Compare points: " + (point1 == point2));
-        System.out.println("Compare points by equals: " + point1.equals(point2));
+        System.out.println("Compare points: " +
+                (point1 == point2));
+        System.out.println("Compare points by equals: " +
+                point1.equals(point2));
     }
 
 }
