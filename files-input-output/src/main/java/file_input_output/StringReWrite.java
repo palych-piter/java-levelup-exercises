@@ -1,7 +1,6 @@
 package file_input_output;
-
 import java.io.*;
-import java.util.Scanner;
+
 
 /**
  * Created by Andrey on 9/21/2015.
