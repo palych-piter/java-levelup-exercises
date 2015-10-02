@@ -18,7 +18,7 @@ public class Queue {
 
 
     //Main method
-    public static void main(String[] args) {
+    public static  void main(String[] args) {
 
         // Initialise a new stack object
         Queue QueueToWork = new Queue();

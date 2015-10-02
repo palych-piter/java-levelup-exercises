@@ -37,7 +37,7 @@ public class Task_C_Comparison {
                     stringtoverify.substring(stringtoverify.lastIndexOf(' ') + 1,
                             stringtoverify.length()));
 
-
+            scr.close();
         } catch(Exception e){
             System.out.printf("Exception while reading " +
                     "data from file: " + e);
@@ -51,11 +51,14 @@ public class Task_C_Comparison {
                printstream.println("YES");
             } else {printstream.println("NO");
             }
+            printstream.close();
 
         } catch(Exception e){
             System.out.printf("Exception while writing " +
                     "data to a file: " + e);
         }
 
+
     }
+
 }

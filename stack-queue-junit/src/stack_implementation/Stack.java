@@ -11,7 +11,7 @@ import static stack_implementation.TestStackPopOperation.*;
 
 public class Stack {
 
-    // Define and initialize variables and arrays
+    // Define and initialize variables and arraays
     final static int ArraySize = 5; // Define a constant for size of a stack
     static int[] Stack = new int[ArraySize]; // Define a array for a stack
     static int CashForStack = 0; // Define a variable for exchanging with a stack
