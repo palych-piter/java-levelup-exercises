@@ -7,15 +7,13 @@ import java.util.Scanner;
 /**
  * Created by Andrey on 9/30/2015.
  */
-public class ToBin {
+public class ToHex {
 
     //define input file name
     public static File inputfile = new File("tobin.in");
     public static File outputfile = new File("tobin.out");
 
-
     public static void main(String[] args) throws Exception {
-
         String stringToConvert;
         String convertedString;
 
@@ -39,7 +37,7 @@ public class ToBin {
             }
         }
 
-            //read next value to handle and make calculation
+        //read next value to handle and make calculation
         for (int i=0;i<=numberOfTests-1;i++) {
 
             convertedString = "";
@@ -61,7 +59,6 @@ public class ToBin {
     }
 
     public static class valueToconvert{
-
         //initialize variables
         String aBin;
 
