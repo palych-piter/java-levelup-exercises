@@ -10,8 +10,8 @@ import java.util.Scanner;
 public class ToHex {
 
     //define input file name
-    public static File inputfile = new File("tobin.in");
-    public static File outputfile = new File("tobin.out");
+    public static File inputfile = new File("tohex.in");
+    public static File outputfile = new File("tohex.out");
 
     public static void main(String[] args) throws Exception {
         String stringToConvert;
@@ -22,28 +22,17 @@ public class ToHex {
         //define output stream
         PrintStream ps = new PrintStream(outputfile);
 
-        //read a number of tests
-        Integer numberOfTests = s.nextInt();
-
-        //initialize an array
-        Long[] inputValues = new Long[numberOfTests];
-
-        //read values to an array
-        for (int i=0;i<=numberOfTests-1;i++) {
+        //read next value to handle and make calculation
+        do {
             Long a = s.nextLong();
-            inputValues[i] = a;
             if (a < 0) {
                 throw new Exception("Negative value has been detected");
             }
-        }
-
-        //read next value to handle and make calculation
-        for (int i=0;i<=numberOfTests-1;i++) {
 
             convertedString = "";
 
             valueToconvert val = new valueToconvert();
-            stringToConvert = val.defineResidue(inputValues[i]);
+            stringToConvert = val.defineResidue(a);
 
             for (int ilength=stringToConvert.length()-1; ilength>-1; ilength--){
                 convertedString = convertedString + stringToConvert.substring(ilength,ilength+1);
@@ -52,6 +41,7 @@ public class ToHex {
             //Write into an output file
             ps.println(convertedString);
         }
+        while (s.hasNext());
 
         //Close
         ps.close();
@@ -70,10 +60,9 @@ public class ToHex {
         //method to return a residue
         public String defineResidue(Long valueToconvert){
             if (valueToconvert==0)return "";
-            aBin = aBin + valueToconvert%2;
-            defineResidue(valueToconvert/2);
+            aBin = aBin + valueToconvert%16;
+            defineResidue(valueToconvert/16);
             return aBin;
         }
-
     }
 }
